@@ -24,16 +24,14 @@ SECRET_KEY = os.environ.get(
 )
 
 # ✅ DEBUG
-DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-
-# ✅ Render hostname automático
-RENDER_HOST = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 # ✅ ALLOWED_HOSTS
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
 ALLOWED_HOSTS = [h.strip() for h in ALLOWED_HOSTS if h.strip()]
 
+# ✅ Render hostname automático
+RENDER_HOST = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
 if RENDER_HOST:
     ALLOWED_HOSTS.append(RENDER_HOST)
 
