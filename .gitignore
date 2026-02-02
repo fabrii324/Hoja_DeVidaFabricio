@@ -33,7 +33,6 @@ media/
 # STATICFILES (si los generas)
 # =========================
 staticfiles/
-static/
 
 # =========================
 # VS CODE / WINDOWS
