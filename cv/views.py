@@ -356,10 +356,16 @@ def cv_pdf(request):
     # ✅ ORDEN FIJO DEL PDF (como tu hoja de vida)
     # ======================================================
     if "datos" in secciones:
-        draw_section_title("Datos personales")
-        draw_wrapped_text(f"Cédula: {perfil.numerocedula}", size=10)
-        draw_wrapped_text(f"Nacionalidad: {perfil.nacionalidad}", size=10)
-        draw_wrapped_text(f"Dirección: {perfil.direcciondomiciliaria}", size=10)
+         draw_wrapped_text(f"Cédula: {perfil.numerocedula}", size=10)
+    draw_wrapped_text(f"Nacionalidad: {perfil.nacionalidad}", size=10)
+    draw_wrapped_text(f"Lugar de nacimiento: {perfil.lugarnacimiento}", size=10)
+    draw_wrapped_text(f"Fecha de nacimiento: {perfil.fechanacimiento}", size=10)
+    draw_wrapped_text(f"Sexo: {perfil.get_sexo_display()}", size=10)
+    draw_wrapped_text(f"Estado civil: {perfil.estadocivil}", size=10)
+    draw_wrapped_text(f"Licencia de conducir: {perfil.licenciaconducir}", size=10)
+    draw_wrapped_text(f"Teléfono: {perfil.telefonofijo}", size=10)
+    draw_wrapped_text(f"Dirección: {perfil.direcciondomiciliaria}", size=10)
+    draw_wrapped_text(f"Dirección de trabajo: {perfil.direcciontrabajo}", size=10)
 
     if "experiencia" in secciones:
         draw_section_title("Experiencia laboral")
